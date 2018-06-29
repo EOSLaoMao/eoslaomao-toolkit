@@ -2,6 +2,7 @@
 account= 
 publicKey=
 url=http://localhost:8888
+containerName=full-node
 
 usage()
 {
@@ -15,6 +16,9 @@ while [ "$1" != "" ]; do
                                 ;;
         -p | --publicKey )      shift
                                 publicKey=$1
+                                ;;
+        -c | --container )      shift
+                                containerName=$1
                                 ;;
         -u | --url )            shift
                                 url=$1
@@ -31,6 +35,6 @@ done
 echo $account
 echo $publicKey
 
-docker exec full-node cleos -u $url set account permission $account claimer '{"threshold":1,"keys":[{"key":'\"$publicKey\"',"weight":1}]}' "active" -p $account@active
+docker exec $containerName cleos -u $url set account permission $account claimer '{"threshold":1,"keys":[{"key":'\"$publicKey\"',"weight":1}]}' "active" -p $account@active
 sleep 1
-docker exec full-node cleos -u $url set action permission $account eosio claimrewards claimer -p $account@active
+docker exec $containerName cleos -u $url set action permission $account eosio claimrewards claimer -p $account@active
