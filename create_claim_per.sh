@@ -1,6 +1,7 @@
 #!/bin/bash
 account= 
 publicKey=
+url=http://localhost:8888
 
 usage()
 {

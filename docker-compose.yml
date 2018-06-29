@@ -2,7 +2,7 @@
 version: "3"
 services:
   nodeosd:
-    image: eos-claimer
+    image: johnnyzhao/eos-claimer:1.0
     environment:
       - EOS_CLAIMER_URL=https://api.eoslaomao.com
       - EOS_CLAIMER_OWNER=eoscanadacom
