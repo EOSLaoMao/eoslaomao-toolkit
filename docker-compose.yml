@@ -1,0 +1,10 @@
+
+version: "3"
+services:
+  nodeosd:
+    image: eos-claimer
+    environment:
+      - EOS_CLAIMER_URL=https://api.eoslaomao.com
+      - EOS_CLAIMER_OWNER=eoscanadacom
+      - EOS_CLAIMER_PERMISSION=claimer
+      - EOS_CLAIMER_KEY=5J2Z1WPUURzmWNyVxTFZQ7GRnHQQrhgRz4LQcm5b6vUw1rbYWgh
